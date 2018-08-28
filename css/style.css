@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+}
+
+h2, p, button {
+    font-family: 'Cutive Mono', serif;
+}
+
+body * {
+    display: flex;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-start;
+    background-image: url("../michael-mobile.jpg");
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -150px;
+    align-items: flex-start;
+}
+
+.quote {
+    padding: 0 30px;
+    flex-wrap: wrap;
+}
+.quote p {
+    font-size: 25px;
+    width:100%;
+}
+
+.top {
+    align-self: flex-end;
+}
+
+.top img {
+    max-width: 450px;
+    align-self: start;
+}
+
+.title {
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+button {
+    background: #2F2E29;
+    color: white;
+    font-size: 25px;
+    align-self: end;
+    padding: 10px 20px;
+    border: 0px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .container {
+        background-image: url("../michael.jpg");
+    }
+
+    .main {
+        width: 50%;
+    }
+}
