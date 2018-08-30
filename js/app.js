@@ -13,10 +13,9 @@ $( document ).ready(function() {
 
     $('.quote').append(button);
 
-    $('.logo').hide();
-    $('.logo').slideDown(500);
+    $('.main').hide();
+    $('.main').slideDown(1000);
     
-    $("#quote").hide();
 
     const xhr = new XMLHttpRequest();
 
@@ -28,9 +27,6 @@ $( document ).ready(function() {
     		button.onclick = function() {
                 var randomNumber = Math.floor(Math.random() * (quotes.length));
     			quoteArea.innerText = '„' + quotes[randomNumber].quote + '"' + ' - ' + quotes[randomNumber].name;
-
-              
-                $("#quote").slideDown(500).delay(5000);
 
     		}
 
