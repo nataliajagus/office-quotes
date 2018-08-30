@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background: #c0c0b8;
 }
 
 h2, p, button {
@@ -7,71 +8,139 @@ h2, p, button {
 }
 
 body * {
-    display: flex;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 .container {
-    display: flex;
-    justify-content: flex-end;
-    align-content: flex-start;
-    background-image: url("../michael-mobile.jpg");
-    background-position: bottom center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    display: grid;
+    background: #c0c0b8;
     width: 100vw;
     height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 4fr;
+    grid-template-areas:
+            "main"
+            "mobile-img"
+            "footer";
 }
 
 .main {
     width: 100%;
+    grid-area: main;
     display: flex;
-    flex-wrap: wrap;
-    margin-top: -150px;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .quote {
-    padding: 0 30px;
-    flex-wrap: wrap;
+    grid-area: quote;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: auto;
 }
 .quote p {
     font-size: 25px;
-    width:100%;
+    max-width: 90%;
+    text-align: center;
 }
 
 .top {
-    align-self: flex-end;
+    grid-area: top;
+    align-self: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30%;
 }
 
 .top img {
-    max-width: 450px;
-    align-self: start;
+    width:600px;
+    max-width: 100%;
+    max-height: 200px;
+    padding: 50px;
 }
 
-.title {
-    font-size: 30px;
-    margin-top: 15px;
+.footer {
+    grid-area: footer;
+    color: #7E7E7E;
+    font-size: 15px;
+    padding: 20px;
+    margin-top: 65px;
+    text-align: center;
+    margin-top: -90px;
+    z-index: 1;
 }
+
 
 button {
     background: #2F2E29;
     color: white;
     font-size: 25px;
-    align-self: end;
+    align-self: center;
     padding: 10px 20px;
     border: 0px;
     border-radius: 15px;
     cursor: pointer;
 }
 
-@media (min-width: 768px) {
+.mobile-img {
+    display: block;
+    grid-area: mobile-img;
+    width: 100%;
+}
+@media (min-width: 1018px) {
     .container {
         background-image: url("../michael.jpg");
+        background-position: bottom center;
+        background-size: cover;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas:
+                ". main"
+                ". main"
+                ". footer";
     }
 
-    .main {
-        width: 50%;
+    .mobile-img {
+        display: none;
     }
+
+    .quote p {
+        text-align: left;
+    }
+
+    button {
+        align-self: end;
+    }
+
+    .quote {
+        justify-content: flex-start;
+        align-items: start;
+        width: 100%;
+    }
+
+    .top {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .top img {
+        padding: 0;
+    }
+
+    .footer {
+        grid-area: footer;
+        color: #7E7E7E;
+        font-size: 15px;
+        padding: 20px;
+        margin-top: 65px;
+        text-align: left;
+    }
+
 }
