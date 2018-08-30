@@ -44,7 +44,7 @@ body * {
     margin-bottom: auto;
 }
 .quote p {
-    font-size: 25px;
+    font-size: 4em;
     max-width: 90%;
     text-align: center;
 }
@@ -81,7 +81,7 @@ body * {
 button {
     background: #2F2E29;
     color: white;
-    font-size: 25px;
+    font-size: 4em;
     align-self: center;
     padding: 10px 20px;
     border: 0px;
@@ -113,10 +113,12 @@ button {
 
     .quote p {
         text-align: left;
+         font-size: 25px;
     }
 
     button {
         align-self: end;
+         font-size: 25px;
     }
 
     .quote {
